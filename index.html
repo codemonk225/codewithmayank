@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -22,7 +23,7 @@
     <!-- Page Navbar -->
     <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a class="logo" href="#">MAYANK ON CODE</a>
+            <a class="logo" href="#">⟰</a>
             <ul class="nav">
                 <li class="item">
                     <a class="link" href="index.html">Home</a>
@@ -294,8 +295,14 @@ No overpromises — just consistent, quality work delivered with passion and pre
 
                         <p class="blog-card-caption">
                             <a href="#">By:Mayank Singh</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 1456</a>
-                            <a href="#"><i class="ti-comment"></i>264</a>
+                        <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">1986</span>
+</a>
+<a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
+                           
                         </p>
                         <p> This development has triggered widespread outrage among Indian citizens, with social media flooded by calls to boycott Turkey in every sector — from trade deals to tourism packages.
                         </p>
@@ -331,10 +338,15 @@ No overpromises — just consistent, quality work delivered with passion and pre
                     <h5 class="blog-card-title">The Rise of "Vibe Coding": How AI is Redefining Developer Productivity</h5>
 
                         <p class="blog-card-caption">
-                            <a href="#">By:Mayank Singh</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 987</a>
-                            <a href="#"><i class="ti-comment"></i>456</a>
-                        </p>
+                            <a href="index.html">By:Mayank Singh</a>
+                           <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">1456</span>
+</a>
+                    <a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
+                                        </p>
                         <p>A new wave in AI technology called “Vibe Coding” is helping developers improve their workflow by making AI more context-aware and personalized. As AI becomes smarter, it's not just writing code — it's understanding how we work. 
 
                         </p>
@@ -361,8 +373,13 @@ No overpromises — just consistent, quality work delivered with passion and pre
 
                         <p class="blog-card-caption">
                             <a href="index.html">By:Mayank Singh</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 1456</a>
-                            <a href="#"><i class="ti-comment"></i> 564</a>
+                           <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">896</span>
+</a>
+                             <a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
                         </p>
 
                         <p>As we step into the future, one thing becomes increasingly clear — the world is moving rapidly toward an electric revolution. By 2030, Electric Vehicles (EVs) are expected to dominate global roads, marking the beginning of a cleaner, smarter era of transportation.</p>
@@ -384,8 +401,14 @@ No overpromises — just consistent, quality work delivered with passion and pre
 
                         <p class="blog-card-caption">
                             <a href="index.html">By:Mayank Singh</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                            <a href="#"><i class="ti-comment"></i> 264</a>
+                         <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">426</span>
+</a>
+<a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
+                           
                         </p>
 <P>The Pahalgam terror attack in 2025 has caused widespread panic and significant repercussions across various sectors of India's economy. The Indian financial markets immediately reacted to the news, leading to notable volatility. The Nifty 50 and BSE Sensex both saw declines of 0.73% and 0.67% respectively, reflecting the heightened investor anxiety amid geopolitical tensions. Smaller stocks also felt the impact, with Midcap and Smallcap indices falling by 2% and 2.6%. This drop in indices was consistent across all 13 major sectoral indices, showing a broad-based sell-off as investor sentiment turned cautious</P>
 <P>The Indian Rupee weakened, hitting 85.6550 against the US dollar, signaling growing concern over the economic stability. Additionally, the 10-year government bond yield rose by 4 basis points as investors flocked to safer assets like bonds, indicating uncertainty in the financial landscape (Source: Reuters).
@@ -477,7 +500,7 @@ No overpromises — just consistent, quality work delivered with passion and pre
     <a href="https://www.facebook.com/codewithmayank" target="_blank" aria-label="Facebook"><i class="ti-facebook"></i></a>
     <a href="https://x.com/MAYANK359674265" target="_blank" aria-label="Twitter"><i class="ti-twitter-alt"></i></a>
     <a href="https://www.instagram.com/mayank_singh.07/" target="_blank" aria-label="Instagram"><i class="ti-instagram"></i></a>
-    <a href="https://www.youtube.com/@ThrottleR15M" target="_blank" aria-label="YouTube"><i class="ti-youtube"></i></a>
+    <a href="https://www.youtube.com/@CoderRPM" target="_blank" aria-label="YouTube"><i class="ti-youtube"></i></a>
     <a href="https://www.linkedin.com/in/mayank-singh-198881211/" target="_blank" aria-label="LinkedIn"><i class="ti-linkedin"></i></a>
 </div>
 
@@ -494,6 +517,44 @@ No overpromises — just consistent, quality work delivered with passion and pre
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script> 
     
+<!-- blog share  -->
+<script>
+function sharePost() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Why India is Boycotting Turkey',
+            text: 'Check out this post!',
+            url: window.location.href
+        })
+        .then(() => console.log('Post shared successfully'))
+        .catch((error) => console.log('Sharing failed', error));
+    } else {
+        alert("Sorry, your browser doesn't support sharing.");
+    }
+}
+</script>
+
+
+
+<!-- LIKE / SHARE FUNCTION -->
+
+<script>
+  function toggleLike(event) {
+    event.preventDefault();
+    const likeBtn = event.currentTarget;
+    const heartIcon = likeBtn.querySelector('i');
+    const countSpan = likeBtn.querySelector('.like-count');
+    let count = parseInt(countSpan.textContent);
+
+    if (heartIcon.style.color === 'red') {
+      heartIcon.style.color = 'grey';
+      countSpan.textContent = count - 1;
+    } else {
+      heartIcon.style.color = 'red';
+      countSpan.textContent = count + 1;
+    }
+  }
+</script>
 
 </body>
 

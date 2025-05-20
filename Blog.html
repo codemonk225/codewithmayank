@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -19,7 +20,7 @@
     <!-- Page Navbar -->
     <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a class="logo" href="index.html"><b>⟰</b></a>
+            <a class="logo" href="index.html">&lt;/&gt;</a>
             <ul class="nav">
                 <li class="item">
                     <a class="link" href="#home">Home</a>
@@ -62,6 +63,8 @@
                 <div class="col-sm offset-sm-2 offset-md-3">
             </div> </div> </div>  </section>
  
+
+
     <!-- blog section -->
     <section class="section" id="blog">
         <!-- container -->
@@ -79,8 +82,13 @@
 
                         <p class="blog-card-caption">
                             <a href="#">By:Mayank Singh </a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 987</a>
-                            <a href="#"><i class="ti-comment"></i> 456</a>
+                            <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">1456</span>
+</a>
+                    <a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
                         </p>
                         <p>A new wave in AI technology called “Vibe Coding” is helping developers improve their workflow by making AI more context-aware and personalized. As AI becomes smarter, it's not just writing code — it's understanding how we work. 
 
@@ -109,8 +117,13 @@
 
                     <p class="blog-card-caption">
                         <a href="index.html">By:Mayank Singh</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 1456</a>
-                        <a href="#"><i class="ti-comment"></i> 564</a>
+                        <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">896</span>
+</a>
+                    <a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
                     </p>
 
                     <p>As we step into the future, one thing becomes increasingly clear — the world is moving rapidly toward an electric revolution. By 2030, Electric Vehicles (EVs) are expected to dominate global roads, marking the beginning of a cleaner, smarter era of transportation.</p>
@@ -138,8 +151,13 @@
 
                     <p class="blog-card-caption">
                         <a href="index.html">By:Mayank Singh</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                        <a href="#"><i class="ti-comment"></i> 264</a>
+                       <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">426</span>
+</a>
+                    <a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
                     </p>
 
                     <p><b>📉 Impact on Indian Stock Market</b></p>
@@ -186,8 +204,13 @@
 
                     <p class="blog-card-caption">
                         <a href="index.html">By:Mayank Singh</a>
-                        <a href="#"><i class="ti-heart text-danger"></i> 1456</a>
-                        <a href="#"><i class="ti-comment"></i> 264</a> </p>
+                       <a href="#" onclick="toggleLike(event)">
+  <i class="ti-heart" style="color: rgb(0, 0, 0);"></i> 
+  <span class="like-count">1986</span>
+</a>
+                    <a href="javascript:void(0);" onclick="sharePost()">
+        <i class="ti-share"></i>
+    </a>
                        
                           <p><b>4️⃣ Impact of Boycott Calls</b></p>
                     <p>Trade:
@@ -267,7 +290,7 @@ One of the primary areas being targeted by the boycott movement is trade. India 
 <a href="https://x.com/MAYANK359674265" target="_blank" aria-label="Twitter"><i class="ti-twitter-alt"></i></a>
 <a href="https://www.instagram.com/mayank_singh.07/" target="_blank" aria-label="Instagram"><i class="ti-instagram"></i></a>
 <a href="https://www.linkedin.com/in/mayank-singh-198881211/" target="_blank" aria-label="LinkedIn"><i class="ti-linkedin"></i></a>
-<a href="https://www.youtube.com/@ThrottleR15M" target="_blank" aria-label="YouTube"><i class="ti-youtube"></i></a>
+<a href="https://www.youtube.com/@CoderRPM" target="_blank" aria-label="YouTube"><i class="ti-youtube"></i></a>
 
             </div>
         </footer>
@@ -282,6 +305,45 @@ One of the primary areas being targeted by the boycott movement is trade. India 
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
+
+    <script>
+function sharePost() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Why India is Boycotting Turkey',
+            text: 'Check out this post!',
+            url: window.location.href
+        })
+        .then(() => console.log('Post shared successfully'))
+        .catch((error) => console.log('Sharing failed', error));
+    } else {
+        alert("Sorry, your browser doesn't support sharing.");
+    }
+}
+</script>
+
+
+<!-- LIKE / SHARE FUNCTION -->
+
+<script>
+  function toggleLike(event) {
+    event.preventDefault();
+    const likeBtn = event.currentTarget;
+    const heartIcon = likeBtn.querySelector('i');
+    const countSpan = likeBtn.querySelector('.like-count');
+    let count = parseInt(countSpan.textContent);
+
+    if (heartIcon.style.color === 'red') {
+      heartIcon.style.color = 'grey';
+      countSpan.textContent = count - 1;
+    } else {
+      heartIcon.style.color = 'red';
+      countSpan.textContent = count + 1;
+    }
+  }
+</script>
+
+
 
 </body>
 
